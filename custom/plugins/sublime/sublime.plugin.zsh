@@ -2,19 +2,13 @@
 #unamestr = 'uname'
 
 sublime_dir=$HOME/local/Sublime2
-
-# create symlink, if doesn't exist
-if [ ! -h $HOME/bin/subl ]; then
-    mkdir -p $HOME/bin
-    subl=$HOME/bin/subl
-    ln -s $sublime_dir/sublime_text $subl
-fi
+sublime=$sublime_dir/sublime_text
 
 if [[ $('uname') == 'Linux' ]]; then
-    if [ -f $subl ]; then
-        st_run() { nohup $subl $@ > /dev/null & }
+    if [ -f $sublime ]; then
+        st_run() { nohup $sublime $@ > /dev/null & }
     else
-        st_run() { nohup $subl $@ > /dev/null & }
+        st_run() { nohup $sublime $@ > /dev/null & }
     fi
 alias st=st_run
 fi
@@ -45,7 +39,7 @@ fi
 ### Create application launcher in Ubuntu
 launcher=/usr/share/applications/sublime.desktop
 if [ ! -f $launcher ]; then
-    version=$(subl -v)
+    version=$(sublime -v)
     echo "
         [Desktop Entry]
         Version=$version
@@ -55,7 +49,7 @@ if [ ! -f $launcher ]; then
         Icon=$sublime_dir/Icon/32x32/sublime_text.png
         Name=Sublime2
         Comment=Programming IDE
-        Exec=$sublime_dir/sublime_text
+        Exec=$sublime
         Categories=Application;Development;
     " | sudo tee $launcher >> /dev/null
 
