@@ -30,5 +30,13 @@ if [ ! -d "${dropbox_subl_dir}" ]; then
 fi
 
 if [ -d  "${sublime_config_dir}" ]; then
+	dir_symlinks=(Installed\ Packages Pristine\ Packages Packages)
+	foreach dir ($dir_symlinks); do
+		# if not symlink, backup
+		if [ ! -h "${sublime_config_dir}/$dir" ]; then
+			mkdir -p ${sublime_config_dir}/bkp
+			mv ${sublime_config_dir}/$dir ${sublime_config_dir}/bkp/$dir
+		fi
+	done
 	ln -s -f $dropbox_subl_dir/* $sublime_config_dir/
 fi
