@@ -18,6 +18,7 @@ alias v="vim"
 
 # List only directories
 alias lsd='ls -l | grep "^d"'
+alias l='ls -la'
 
 # Source .zshrc file
 alias reload!='. ~/.zshrc'
