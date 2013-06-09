@@ -39,7 +39,7 @@ fi
 ### Create application launcher in Ubuntu
 launcher=/usr/share/applications/sublime.desktop
 if [ ! -f $launcher ]; then
-    version=$(sublime -v)
+    version=$($sublime -v)
     echo "
         [Desktop Entry]
         Version=$version
