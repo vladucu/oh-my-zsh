@@ -6,10 +6,14 @@
 
 # Use aptitude if installed, or apt-get if not.
 # You can just set apt_pref='apt-get' to override it.
-if [[ -e $( which aptitude 2>&1 ) ]]; then
-    apt_pref='aptitude'
+if [[ -e $( which apt-fast 2>&1 ) ]]; then
+    apt_pref='apt-fast'
 else
-    apt_pref='apt-get'
+    if [[ -e $( which aptitude 2>&1 ) ]]; then
+        apt_pref='aptitude'
+    else
+        apt_pref='apt-get'
+    fi
 fi
 
 # Use sudo by default if it's installed

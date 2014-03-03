@@ -23,5 +23,8 @@ alias l='ls -la'
 # Speed up NPM (source: http://ilee.co.uk/using-npm-in-europe/)
 alias enpm="npm --registry http://registry.npmjs.eu"
 
+# Check for a running process
+alias psx="ps auxw | grep $1"
+
 # Source .zshrc file
 alias reload!='. ~/.zshrc'
