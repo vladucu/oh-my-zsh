@@ -1,7 +1,7 @@
 # Sublime Text 2 Aliases
 #unamestr = 'uname'
 
-sublime_dir=$HOME/local/Sublime2
+sublime_dir=/opt/sublime_text
 sublime=$sublime_dir/sublime_text
 
 if [[ $('uname') == 'Linux' ]]; then
@@ -17,8 +17,8 @@ alias stt='st .'
 
 ### Sublime 2 packages and user settings
 # we are keeping this in Dropbox and just symlinking the needed directories
-sublime_config_dir=$HOME/.config/sublime-text-2
-dropbox_subl_dir=$HOME/Dropbox/Sublime2
+sublime_config_dir=$HOME/.config/sublime-text-3
+dropbox_subl_dir=$HOME/Dropbox/sublime3
 # create Dropbox Sublime 2 dir if doesn't exist
 if [ ! -d "${dropbox_subl_dir}" ]; then
     mkdir -p $dropbox_subl_dir
@@ -37,20 +37,33 @@ if [ -d  "${sublime_config_dir}" ]; then
 fi
 
 ### Create application launcher in Ubuntu
-launcher=/usr/share/applications/sublime.desktop
+launcher=/usr/share/applications/sublime_text.desktop
 if [ ! -f $launcher ]; then
     version=$($sublime -v)
     echo "
         [Desktop Entry]
-        Version=$version
+        Version=1.0
         Type=Application
+        Name=Sublime Text
+        GenericName=Text Editor
+        Comment=Sophisticated text editor for code, markup and prose
+        Exec=/opt/sublime_text/sublime_text %F
         Terminal=false
+        MimeType=text/plain;
+        Icon=sublime-text
+        Categories=TextEditor;Development;
         StartupNotify=true
-        Icon=$sublime_dir/Icon/32x32/sublime_text.png
-        Name=Sublime2
-        Comment=Programming IDE
-        Exec=$sublime
-        Categories=Application;Development;
+        Actions=Window;Document;
+
+        [Desktop Action Window]
+        Name=New Window
+        Exec=/opt/sublime_text/sublime_text -n
+        OnlyShowIn=Unity;
+
+        [Desktop Action Document]
+        Name=New File
+        Exec=/opt/sublime_text/sublime_text --command new_file
+        OnlyShowIn=Unity;
     " | sudo tee $launcher >> /dev/null
 
     sudo update-desktop-database
