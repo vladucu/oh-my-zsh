@@ -28,3 +28,13 @@ alias psx="ps auxw | grep $1"
 
 # Source .zshrc file
 alias reload!='. ~/.zshrc'
+
+# Supervisor
+alias sserver='sudo supervisord -c /etc/supervisor/supervisord.conf'
+alias sstatus='sudo supervisorctl -c /etc/supervisor/supervisord.conf status'
+alias sstart='sudo supervisorctl -c /etc/supervisor/supervisord.conf start all'
+alias sstop='sudo supervisorctl -c /etc/supervisor/supervisord.conf stop all'
+alias srestart='sudo supervisorctl -c /etc/supervisor/supervisord.conf restart all'
+alias sreload='sudo supervisorctl -c /etc/supervisor/supervisord.conf reload'
+alias sshutdown='sudo supervisorctl -c /etc/supervisor/supervisord.conf shutdown'
+alias resquerestart='sudo supervisorctl -c /etc/supervisor/supervisord.conf restart resque'
