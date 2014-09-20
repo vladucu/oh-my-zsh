@@ -6,7 +6,7 @@ PATH+=:$HOME/.composer/vendor/bin
 PATH+=:/usr/local/go/bin
 
 # http://golang.org/doc/code.html#GOPATH
-GOPATH=$HOME/dev/go
+GOPATH=$HOME/godev
 PATH+=:$GOPATH/bin
 
 export PATH
