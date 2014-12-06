@@ -38,3 +38,6 @@ alias srestart='sudo supervisorctl -c /etc/supervisor/supervisord.conf restart a
 alias sreload='sudo supervisorctl -c /etc/supervisor/supervisord.conf reload'
 alias sshutdown='sudo supervisorctl -c /etc/supervisor/supervisord.conf shutdown'
 alias resquerestart='sudo supervisorctl -c /etc/supervisor/supervisord.conf restart resque'
+
+# alias python as python3
+alias python=python3
