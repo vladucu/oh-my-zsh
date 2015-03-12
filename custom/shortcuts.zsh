@@ -8,4 +8,5 @@ stapp=/home/vladucu/www/sweettoothapp
 dev=/home/vladucu/dev
 stl=/home/vladucu/work/stl
 api=/home/vladucu/work/stl/api.sweettooth.io
+store=/home/vladucu/work/stl/sweettoothstore.com
 ui=/home/vladucu/work/stl/manage.sweettoothrewards.com
