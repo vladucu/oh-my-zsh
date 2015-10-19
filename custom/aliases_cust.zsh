@@ -39,5 +39,5 @@ alias sreload='sudo supervisorctl -c /etc/supervisor/supervisord.conf reload'
 alias sshutdown='sudo supervisorctl -c /etc/supervisor/supervisord.conf shutdown'
 alias resquerestart='sudo supervisorctl -c /etc/supervisor/supervisord.conf restart resque'
 
-# alias python as python3
-alias python=python3
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
