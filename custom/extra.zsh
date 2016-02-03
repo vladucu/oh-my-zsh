@@ -5,6 +5,7 @@ PATH+=:$HOME/local/npm/bin
 PATH+=:$HOME/.composer/vendor/bin
 PATH+=:/usr/local/go/bin
 PATH+=:/usr/local/sbin
+PATH+=:/usr/local/bin
 
 # http://golang.org/doc/code.html#GOPATH
 GOPATH=$HOME/dev/go
