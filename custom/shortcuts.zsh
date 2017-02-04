@@ -8,7 +8,7 @@
 dev=/Users/vladucu/vladucu/dev
 stl=/Users/vladucu/dev/work/stl
 api=/Users/vladucu/dev/work/stl/api.sweettooth.io
-store=/Users/vladucu/dev/work/stl/sweettoothstore.com
+storefrontjs=/Users/vladucu/dev/work/stl/sweettooth-storefront-js
 storefront=/Users/vladucu/dev/work/stl/sweettooth-storefront
 ui=/Users/vladucu/dev/work/stl/manage.sweettoothrewards.com
 admin=/Users/vladucu/dev/work/stl/admin.sweettoothrewards.com

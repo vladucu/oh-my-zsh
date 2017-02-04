@@ -48,6 +48,18 @@ alias glgg='git log --graph'
 compdef _git glgg=git-log
 alias glgga='git log --graph --oneline --decorate --all'
 compdef _git glgga=git-log
+alias glggf='git log --graph --abbrev-commit --oneline --decorate --all'
+compdef _git glggf=git-log
+
+alias gshi='git stash --keep-index'
+compdef _git gshi=git-stash
+alias gsh='git stash'
+compdef _git gsh=git-stash
+alias gshu='git stash --include-untracked'
+compdef _git gshu=git-stash
+alias gsha='git stash --all'
+compdef _git gsha=git-stash
+
 alias gss='git status -s'
 compdef _git gss=git-status
 alias ga='git add'

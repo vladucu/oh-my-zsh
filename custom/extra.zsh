@@ -10,6 +10,15 @@ PATH+=:/usr/local/bin
 # http://golang.org/doc/code.html#GOPATH
 GOPATH=$HOME/dev/go
 PATH+=:$GOPATH/bin
+GOROOT=/usr/local/opt/go/libexec
+PATH+=:$GOROOT/bin
+
+# for direnv to load specific node version using nvm
+NODE_VERSIONS=$HOME/.nvm/versions/node
+NODE_VERSION_PREFIX="v"
 
 export PATH
 export GOPATH
+export GOROOT
+export NODE_VERSIONS
+export NODE_VERSION_PREFIX
